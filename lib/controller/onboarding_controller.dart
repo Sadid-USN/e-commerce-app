@@ -18,7 +18,7 @@ class ImplementController extends OnBoardingController {
   nextPage() {
     currentPage++;
     if (currentPage > onBoardingModelist.length - 1) {
-      Get.toNamed(AppRouteNames.login);
+      Get.offAllNamed(AppRouteNames.login);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 300), curve: Curves.ease);
@@ -29,7 +29,7 @@ class ImplementController extends OnBoardingController {
     currentPage = 4;
 
     if (currentPage > onBoardingModelist.length - 1) {
-      Get.toNamed(AppRouteNames.login);
+      Get.offAllNamed(AppRouteNames.login);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 300), curve: Curves.ease);
