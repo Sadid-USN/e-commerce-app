@@ -1,14 +1,14 @@
 import 'package:e_encommerce/view/screen/auth/auth_button.dart';
 import 'package:e_encommerce/view/screen/auth/sign_in_and_sign_up_text.dart';
-import 'package:e_encommerce/view/screen/auth/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../core/constant/colors.dart';
 import '../../widget/login_filds.dart';
-import 'logo_auth.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
         elevation: 0.0,
         automaticallyImplyLeading: true,
         title: Text(
-          'Sign In',
+          'Sign Up',
           style: Theme.of(context).textTheme.headline1!.copyWith(
                 color: Colors.grey.shade600,
                 fontSize: 20.0,
@@ -29,10 +29,9 @@ class LoginPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          const LogoAuth(),
           Center(
             child: Text(
-              'Welcome Back',
+              'Welcome',
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -48,7 +47,7 @@ class LoginPage extends StatelessWidget {
                 horizontal: 16,
               ),
               child: Text(
-                'Sign in with your email and password or continue with social media',
+                'To Sign Up you need to enter your email and create a new password',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey.shade500, fontSize: 18, height: 1.8),
@@ -78,17 +77,18 @@ class LoginPage extends StatelessWidget {
           ),
           AuthButton(
             onPressed: () {},
-            text: 'Sign In',
+            text: 'Sign Up',
           ),
           const SizedBox(
             height: 30,
           ),
           SignInAndSignUpText(
-              textone: 'Don\'t have an account? ',
-              texttwo: 'Sign Up',
-              onTap: () {
-                Get.to(() => const SignUpPage());
-              })
+            textone: 'Alredy have an account ',
+            texttwo: 'Sign In',
+            onTap: () {
+              Get.to(() => const LoginPage());
+            },
+          )
         ],
       ),
     );

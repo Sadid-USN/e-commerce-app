@@ -18,9 +18,11 @@ class CostomButton extends GetView<ImplementController> {
           child: Container(
             alignment: Alignment.center,
             height: 50,
-            width: 300,
+            width: 350,
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
                 color: priveryColor,
                 boxShadow: [
                   BoxShadow(

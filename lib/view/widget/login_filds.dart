@@ -1,9 +1,12 @@
+import 'package:e_encommerce/controller/sign_in_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginFilds extends StatelessWidget {
   const LoginFilds({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    SignInLoginController controller = Get.put(SignInLoginController());
     return Column(
       children: [
         Container(
@@ -11,6 +14,7 @@ class LoginFilds extends StatelessWidget {
             horizontal: 16,
           ),
           child: TextFormField(
+            controller: controller.email,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25.0),
@@ -57,6 +61,7 @@ class LoginFilds extends StatelessWidget {
             horizontal: 16,
           ),
           child: TextFormField(
+            controller: controller.password,
             obscureText: true,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
