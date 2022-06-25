@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
 class LogoAuth extends StatelessWidget {
-  const LogoAuth({Key? key}) : super(key: key);
+  final String image;
+  final double? height;
+  final double? width;
+  const LogoAuth({
+    Key? key,
+    required this.image,
+    this.height,
+    this.width,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/images/logo.png',
-      height: 150,
+      image,
+      height: height,
+      width: width,
     );
   }
 }

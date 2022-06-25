@@ -1,51 +1,40 @@
-import 'package:e_encommerce/core/constant/route_names.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
+// import 'package:e_encommerce/core/constant/route_names.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:get/get.dart';
 
-import '../data/datasource/static/static.dart';
+// import '../data/datasource/static/static.dart';
 
-abstract class OnBoardingController extends GetxController {
-  nextPage();
+// abstract class OnBoardingController extends GetxController {
+//   nextPage();
 
-  onPageChanged(int index);
-}
+//   onPageChanged(int index);
+// }
 
-class ImplementController extends OnBoardingController {
-  late PageController pageController;
-  int currentPage = 0;
+// class ImplementController extends OnBoardingController {
+//   late PageController pageController;
+//   int currentPage = 0;
 
-  @override
-  nextPage() {
-    currentPage++;
-    if (currentPage > onBoardingModelist.length - 1) {
-      Get.offAllNamed(AppRouteNames.login);
-    } else {
-      pageController.animateToPage(currentPage,
-          duration: const Duration(milliseconds: 300), curve: Curves.ease);
-    }
-  }
+//   @override
+//   nextPage() {
+//     currentPage++;
+//     if (currentPage > onBoardingModelist.length - 1) {
+//       Get.offAllNamed(AppRouteNames.login);
+//     } else {
+//       pageController.animateToPage(currentPage,
+//           duration: const Duration(milliseconds: 300), curve: Curves.ease);
+//     }
+//   }
 
-  skip() {
-    currentPage = 4;
+//   @override
+//   onPageChanged(index) {
+//     currentPage = index;
 
-    if (currentPage > onBoardingModelist.length - 1) {
-      Get.offAllNamed(AppRouteNames.login);
-    } else {
-      pageController.animateToPage(currentPage,
-          duration: const Duration(milliseconds: 300), curve: Curves.ease);
-    }
-  }
+//     update();
+//   }
 
-  @override
-  onPageChanged(index) {
-    currentPage = index;
-
-    update();
-  }
-
-  @override
-  void onInit() {
-    pageController = PageController();
-    super.onInit();
-  }
-}
+//   @override
+//   void onInit() {
+//     pageController = PageController();
+//     super.onInit();
+//   }
+// }

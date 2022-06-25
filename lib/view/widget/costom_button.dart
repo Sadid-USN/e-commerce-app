@@ -1,11 +1,11 @@
-import 'package:e_encommerce/controller/onboarding_controller.dart';
+import 'package:e_encommerce/controller/app_conroller.dart';
 import 'package:e_encommerce/view/widget/skip.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constant/colors.dart';
 
-class CostomButton extends GetView<ImplementController> {
+class CostomButton extends GetView<AppController> {
   const CostomButton({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

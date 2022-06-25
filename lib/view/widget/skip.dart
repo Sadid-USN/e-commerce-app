@@ -1,9 +1,10 @@
-import 'package:e_encommerce/controller/onboarding_controller.dart';
 import 'package:e_encommerce/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Skip extends GetView<ImplementController> {
+import '../../controller/app_conroller.dart';
+
+class Skip extends GetView<AppController> {
   const Skip({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

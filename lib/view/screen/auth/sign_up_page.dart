@@ -1,16 +1,18 @@
+import 'package:e_encommerce/controller/app_conroller.dart';
 import 'package:e_encommerce/view/screen/auth/auth_button.dart';
 import 'package:e_encommerce/view/screen/auth/sign_in_and_sign_up_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/constant/colors.dart';
-import '../../widget/login_filds.dart';
+import '../../widget/filds.dart';
 import 'login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    AppController controller = Get.put(AppController());
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -57,25 +59,92 @@ class SignUpPage extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          const LoginFilds(),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Filds(
+              controller: controller.userName,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Icon(
+                  Icons.person_outline,
+                  color: Colors.grey.shade400,
+                ),
+              ),
+              label: 'Username',
+              hintText: 'Enter your Username',
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Filds(
+              controller: controller.signUpEmail,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Icon(
+                  Icons.email_outlined,
+                  color: Colors.grey.shade400,
+                ),
+              ),
+              label: 'Email',
+              hintText: 'Enter your Email',
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Filds(
+              controller: controller.phone,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Icon(
+                  Icons.email_outlined,
+                  color: Colors.grey.shade400,
+                ),
+              ),
+              label: 'Phone',
+              hintText: 'Enter your Phone',
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Filds(
+              controller: controller.signUppassword,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Icon(
+                  Icons.email_outlined,
+                  color: Colors.grey.shade400,
+                ),
+              ),
+              label: 'Password',
+              hintText: 'Enter your Password',
+            ),
+          ),
           const SizedBox(
             height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: Text(
-              'Forgot Password',
-              textAlign: TextAlign.end,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1!
-                  .copyWith(color: forgotPasswordColor, fontSize: 16.0),
-            ),
           ),
           const SizedBox(
             height: 10,
           ),
           AuthButton(
+            height: 50,
+            width: 200,
             onPressed: () {},
             text: 'Sign Up',
           ),
@@ -83,6 +152,7 @@ class SignUpPage extends StatelessWidget {
             height: 30,
           ),
           SignInAndSignUpText(
+            textAlignCenter: TextAlign.center,
             textone: 'Alredy have an account ',
             texttwo: 'Sign In',
             onTap: () {

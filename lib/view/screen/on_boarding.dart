@@ -1,4 +1,4 @@
-import 'package:e_encommerce/controller/onboarding_controller.dart';
+import 'package:e_encommerce/controller/app_conroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +11,7 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(ImplementController());
+    Get.put(AppController());
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       body: SafeArea(

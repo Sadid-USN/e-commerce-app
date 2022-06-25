@@ -2,12 +2,16 @@ import 'package:e_encommerce/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
+  final double height;
+  final double width;
   final void Function()? onPressed;
   final String? text;
   const AuthButton({
     Key? key,
     this.onPressed,
     this.text,
+    required this.height,
+    required this.width,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -15,8 +19,8 @@ class AuthButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         alignment: Alignment.center,
-        height: 50,
-        width: 300,
+        height: height,
+        width: width,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
             color: signinButtonColor,

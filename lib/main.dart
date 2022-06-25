@@ -49,7 +49,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: routes,
-      home: const LanguagePage(),
+      home:
+          //const Test(),
+
+          const LanguagePage(),
     );
   }
 }

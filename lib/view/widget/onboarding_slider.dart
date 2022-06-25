@@ -1,10 +1,10 @@
-import 'package:e_encommerce/controller/onboarding_controller.dart';
+import 'package:e_encommerce/controller/app_conroller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
 import '../../data/datasource/static/static.dart';
 
-class OnBoardingSlider extends GetView<ImplementController> {
+class OnBoardingSlider extends GetView<AppController> {
   const OnBoardingSlider({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,30 @@ class OnBoardingSlider extends GetView<ImplementController> {
           return Column(
             children: [
               const Spacer(),
+              // InkWell(
+              //   onTap: () {
+              //     Get.to(
+              //       () => const LanguagePage(),
+              //     );
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(right: 12),
+              //     child: Image.asset(
+              //       'assets/images/translate.png',
+              //       height: 22,
+              //       width: 22,
+              //     ),
+              //   ),
+              // ),
+
               Text(
                 onBoardingModelist[index].title!,
                 style: Theme.of(context).textTheme.headline1,
               ),
+              const Spacer(),
               Image.asset(
                 onBoardingModelist[index].image!,
+                height: 300,
               ),
               Text(
                 onBoardingModelist[index].body!,
