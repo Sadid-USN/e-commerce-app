@@ -1,17 +1,14 @@
 import 'package:e_encommerce/controller/app_conroller.dart';
 import 'package:e_encommerce/view/screen/auth/auth_button.dart';
 import 'package:e_encommerce/view/screen/auth/logo_auth.dart';
-import 'package:e_encommerce/view/screen/auth/sign_in_and_sign_up_text.dart';
-import 'package:e_encommerce/view/screen/auth/verification_code.dart';
+import 'package:e_encommerce/view/screen/auth/success_sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constant/colors.dart';
+import '../../../widget/filds.dart';
 
-import '../../../core/constant/colors.dart';
-import '../../widget/filds.dart';
-import 'login_page.dart';
-
-class ForgetPasswordPage extends StatelessWidget {
-  const ForgetPasswordPage({Key? key}) : super(key: key);
+class CheckEmail extends StatelessWidget {
+  const CheckEmail({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     AppController controller = Get.put(AppController());
@@ -22,7 +19,7 @@ class ForgetPasswordPage extends StatelessWidget {
         elevation: 0.0,
         automaticallyImplyLeading: true,
         title: Text(
-          'Forgot Password',
+          '29'.tr,
           style: Theme.of(context).textTheme.headline1!.copyWith(
                 color: Colors.grey.shade600,
                 fontSize: 20.0,
@@ -33,12 +30,15 @@ class ForgetPasswordPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
+          const SizedBox(
+            height: 50,
+          ),
           const LogoAuth(
-            image: 'assets/images/forgot_pas.png',
+            image: 'assets/animation/email.json',
             height: 180,
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           Center(
             child: Padding(
@@ -46,7 +46,7 @@ class ForgetPasswordPage extends StatelessWidget {
                 horizontal: 16,
               ),
               child: Text(
-                'Please Enter your email to recive a verification code',
+                '31'.tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey.shade500, fontSize: 18, height: 1.8),
@@ -54,7 +54,7 @@ class ForgetPasswordPage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
             margin: const EdgeInsets.symmetric(
@@ -69,35 +69,21 @@ class ForgetPasswordPage extends StatelessWidget {
                   color: Colors.grey.shade400,
                 ),
               ),
-              label: 'Email',
-              hintText: 'Enter your email',
+              label: '20'.tr,
+              hintText: '14'.tr,
             ),
           ),
           const SizedBox(
-            height: 30,
-          ),
-          const SizedBox(
-            height: 10,
+            height: 20,
           ),
           AuthButton(
             onPressed: () {
-              Get.to(() => const VerificationPage());
+              Get.to(() => const SuccessSignUp());
             },
-            text: 'Send',
+            text: '45'.tr,
             height: 50,
-            width: 150,
+            width: 200,
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          SignInAndSignUpText(
-            textAlignCenter: TextAlign.center,
-            textone: 'back to ',
-            texttwo: 'Sign In',
-            onTap: () {
-              Get.to(() => const LoginPage());
-            },
-          )
         ],
       ),
     );

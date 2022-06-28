@@ -6,11 +6,16 @@ class SuccessResetPaswword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Success Reset Paswword'),
         centerTitle: true,
       ),
-      body: Row(
-        children: const [],
+      body: Center(
+        child: Row(
+          children: const [
+            Text('Success Reset Paswword'),
+          ],
+        ),
       ),
     );
   }

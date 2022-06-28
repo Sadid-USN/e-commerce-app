@@ -21,7 +21,9 @@ class DotsController extends StatelessWidget {
               height: 6,
               width: controller.currentPage == index ? 20 : 6,
               decoration: BoxDecoration(
-                  color: priveryColor, borderRadius: BorderRadius.circular(12)),
+                color: priveryColor,
+                borderRadius: BorderRadius.circular(12),
+              ),
             ),
           ),
         ],

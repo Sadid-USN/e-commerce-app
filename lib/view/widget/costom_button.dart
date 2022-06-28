@@ -30,10 +30,10 @@ class CostomButton extends GetView<AppController> {
                       offset: Offset(0.0, 2.0),
                       blurRadius: 6.0),
                 ]),
-            child: const Text(
-              'Continue',
+            child: Text(
+              '10'.tr,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 18.0),

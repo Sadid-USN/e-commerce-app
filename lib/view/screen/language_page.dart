@@ -18,7 +18,7 @@ class LanguagePage extends GetView<LocalController> {
               flex: 1,
             ),
             Text(
-              'title'.tr,
+              '1'.tr,
               style: Theme.of(context).textTheme.headline1,
             ),
             const Spacer(

@@ -1,12 +1,14 @@
 import 'package:e_encommerce/view/screen/auth/auth_button.dart';
+import 'package:e_encommerce/view/screen/auth/logo_auth.dart';
 import 'package:e_encommerce/view/screen/auth/sign_in_and_sign_up_text.dart';
+import 'package:e_encommerce/view/screen/auth/success_sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/app_conroller.dart';
-import '../../../core/constant/colors.dart';
-import '../../widget/filds.dart';
-import 'login_page.dart';
+import '../../../../controller/app_conroller.dart';
+import '../../../../core/constant/colors.dart';
+import '../../../widget/filds.dart';
+import '../login_page.dart';
 
 class ResetPaswwordPage extends StatelessWidget {
   const ResetPaswwordPage({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class ResetPaswwordPage extends StatelessWidget {
         elevation: 0.0,
         automaticallyImplyLeading: true,
         title: Text(
-          'Reset Paswword',
+          '43'.tr,
           style: Theme.of(context).textTheme.headline1!.copyWith(
                 color: Colors.grey.shade600,
                 fontSize: 20.0,
@@ -31,10 +33,11 @@ class ResetPaswwordPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // const LogoAuth(
-          //   image: 'assets/images/forgot_pas.png',
-          //   height: 180,
-          // ),
+          const LogoAuth(
+            image: 'assets/animation/resetpassword.json',
+            width: double.infinity,
+            height: 250,
+          ),
           const SizedBox(
             height: 10,
           ),
@@ -44,7 +47,7 @@ class ResetPaswwordPage extends StatelessWidget {
                 horizontal: 16,
               ),
               child: Text(
-                'Please enter a new password',
+                '36'.tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey.shade500, fontSize: 18, height: 1.8),
@@ -67,8 +70,8 @@ class ResetPaswwordPage extends StatelessWidget {
                   color: Colors.grey.shade400,
                 ),
               ),
-              label: 'Password',
-              hintText: 'Enter a new Password',
+              label: '21'.tr,
+              hintText: '36'.tr,
             ),
           ),
           const SizedBox(
@@ -87,17 +90,18 @@ class ResetPaswwordPage extends StatelessWidget {
                   color: Colors.grey.shade400,
                 ),
               ),
-              label: 'Password',
-              hintText: 'Repeat Password',
+              label: '21'.tr,
+              hintText: '44'.tr,
             ),
           ),
           const SizedBox(
             height: 30,
           ),
-
           AuthButton(
-            onPressed: () {},
-            text: 'Save',
+            onPressed: () {
+              Get.to(() => const SuccessSignUp());
+            },
+            text: '35'.tr,
             height: 50,
             width: 150,
           ),
@@ -106,8 +110,8 @@ class ResetPaswwordPage extends StatelessWidget {
           ),
           SignInAndSignUpText(
             textAlignCenter: TextAlign.center,
-            textone: 'back to ',
-            texttwo: 'Sign In',
+            textone: 'back'.tr,
+            texttwo: '11'.tr,
             onTap: () {
               Get.to(() => const LoginPage());
             },

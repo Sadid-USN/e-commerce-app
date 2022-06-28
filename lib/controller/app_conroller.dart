@@ -4,10 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class MyController extends GetxController {
-  goToSuccessResetPassword();
-  goToResetPasswordPage();
   checkCode();
   late String verifyCode;
+
   nextPage();
   onPageChanged(int index);
   late PageController pageController;
@@ -63,6 +62,8 @@ class AppController extends MyController {
 
   @override
   void dispose() {
+    pageController.dispose();
+    //
     newPassword.dispose();
     repeatNewPassword.dispose();
     signUpEmail.dispose();
@@ -114,13 +115,8 @@ class AppController extends MyController {
   @override
   checkCode() {}
 
-  @override
-  goToResetPasswordPage() {
-    Get.toNamed(AppRouteNames.resetPassword);
-  }
-
-  @override
-  goToSuccessResetPassword() {
-    Get.toNamed(AppRouteNames.successResetPaswword);
-  }
+  // @override
+  // goToSuccessResetPassword() {
+  //   Get.toNamed(AppRouteNames.successResetPaswword);
+  // }
 }

@@ -1,10 +1,11 @@
 import 'package:e_encommerce/core/constant/route_names.dart';
-import 'package:e_encommerce/view/screen/auth/forget_password_page.dart';
-import 'package:e_encommerce/view/screen/auth/reset_password_page.dart';
+import 'package:e_encommerce/view/screen/auth/forgotpassword/check_email.dart';
+import 'package:e_encommerce/view/screen/auth/forgotpassword/forget_password_page.dart';
+import 'package:e_encommerce/view/screen/auth/forgotpassword/reset_password_page.dart';
 import 'package:e_encommerce/view/screen/auth/sign_up_page.dart';
-import 'package:e_encommerce/view/screen/auth/success_reset_password.dart';
+import 'package:e_encommerce/view/screen/auth/forgotpassword/success_reset_password.dart';
 import 'package:e_encommerce/view/screen/auth/success_sign_up.dart';
-import 'package:e_encommerce/view/screen/auth/verification_code.dart';
+import 'package:e_encommerce/view/screen/auth/forgotpassword/verification_code.dart';
 import 'package:e_encommerce/view/screen/on_boarding.dart';
 import 'package:flutter/material.dart';
 import '../../view/screen/auth/login_page.dart';
@@ -21,4 +22,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   // Success Auth pages
   AppRouteNames.successResetPaswword: (context) => const SuccessResetPaswword(),
   AppRouteNames.successSignUp: (context) => const SuccessSignUp(),
+  AppRouteNames.checkEmail: (context) => const CheckEmail(),
 };

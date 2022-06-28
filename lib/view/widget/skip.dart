@@ -12,9 +12,9 @@ class Skip extends GetView<AppController> {
       onTap: () {
         controller.skip();
       },
-      child: const Text(
-        'Skip',
-        style: TextStyle(
+      child: Text(
+        'skip'.tr,
+        style: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 18, color: skipColor),
       ),
     );

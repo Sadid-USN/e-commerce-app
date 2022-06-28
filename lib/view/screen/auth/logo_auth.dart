@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LogoAuth extends StatelessWidget {
   final String image;
@@ -12,7 +13,7 @@ class LogoAuth extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
+    return Lottie.asset(
       image,
       height: height,
       width: width,
