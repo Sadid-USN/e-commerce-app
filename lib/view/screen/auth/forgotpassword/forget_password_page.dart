@@ -61,6 +61,9 @@ class ForgetPasswordPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.forgotpasswordEmail,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),

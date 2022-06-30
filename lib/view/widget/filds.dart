@@ -5,17 +5,20 @@ class Filds extends StatelessWidget {
   final String hintText;
   final Widget suffixIcon;
   final TextEditingController? controller;
+  final String? Function(String?) validator;
 
   const Filds({
     Key? key,
     required this.hintText,
     required this.label,
     required this.suffixIcon,
+    required this.validator,
     this.controller,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       controller: controller,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(

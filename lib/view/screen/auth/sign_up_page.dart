@@ -65,6 +65,9 @@ class SignUpPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.userName,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),
@@ -85,6 +88,9 @@ class SignUpPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.signUpEmail,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),
@@ -105,6 +111,9 @@ class SignUpPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.phone,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),
@@ -125,6 +134,9 @@ class SignUpPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.signUppassword,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),

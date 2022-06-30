@@ -62,6 +62,9 @@ class ResetPaswwordPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.newPassword,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),
@@ -82,6 +85,9 @@ class ResetPaswwordPage extends StatelessWidget {
               horizontal: 16,
             ),
             child: Filds(
+              validator: (val) {
+                return null;
+              },
               controller: controller.repeatNewPassword,
               suffixIcon: Padding(
                 padding: const EdgeInsets.only(right: 12.0),

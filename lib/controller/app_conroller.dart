@@ -19,6 +19,7 @@ abstract class MyController extends GetxController {
 }
 
 class AppController extends MyController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   // New Password
   late TextEditingController newPassword;
   late TextEditingController repeatNewPassword;
@@ -36,7 +37,14 @@ class AppController extends MyController {
   late TextEditingController phone;
 
   @override
-  login() {}
+  login() {
+    // var formdata = formstate.currentState;
+    if (formstate.currentState!.validate()) {
+      print('Validate');
+    } else {
+      print('not Valid');
+    }
+  }
 
   @override
   signUp() {}
