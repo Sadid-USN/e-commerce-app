@@ -11,29 +11,32 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AppController());
-    return Scaffold(
-      backgroundColor: const Color(0xffFFFFFF),
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Expanded(
-              flex: 3,
-              child: OnBoardingSlider(),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: const [
-                  Spacer(),
-                  DotsController(),
-                  Spacer(),
-                  CostomButton(),
-                  Spacer(),
-                ],
+    AppController controller = Get.put(AppController());
+    return WillPopScope(
+      onWillPop: controller.exitDialog,
+      child: Scaffold(
+        backgroundColor: const Color(0xffFFFFFF),
+        body: SafeArea(
+          child: Column(
+            children: [
+              const Expanded(
+                flex: 3,
+                child: OnBoardingSlider(),
               ),
-            ),
-          ],
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: const [
+                    Spacer(),
+                    DotsController(),
+                    Spacer(),
+                    CostomButton(),
+                    Spacer(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

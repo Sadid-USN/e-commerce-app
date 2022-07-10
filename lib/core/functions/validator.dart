@@ -2,7 +2,7 @@ import 'package:get/utils.dart';
 
 validator(String val, int min, int max, String type) {
   if (val.isEmpty) {
-    return "*required fields";
+    return "*required";
   }
   if (type == 'username') {
     if (!GetUtils.isUsername(val)) {

@@ -1,14 +1,12 @@
 import 'package:e_encommerce/view/screen/auth/auth_button.dart';
 import 'package:e_encommerce/view/screen/auth/logo_auth.dart';
 import 'package:e_encommerce/view/screen/auth/sign_in_and_sign_up_text.dart';
-import 'package:e_encommerce/view/screen/auth/success_sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/app_conroller.dart';
 import '../../../../core/constant/colors.dart';
-import '../../../widget/filds.dart';
-import '../login_page.dart';
+import '../../../widget/my_field.dart';
 
 class ResetPaswwordPage extends StatelessWidget {
   const ResetPaswwordPage({Key? key}) : super(key: key);
@@ -61,18 +59,13 @@ class ResetPaswwordPage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
-            child: Filds(
+            child: MyField(
+              isNumber: false,
               validator: (val) {
                 return null;
               },
               controller: controller.newPassword,
-              suffixIcon: Padding(
-                padding: const EdgeInsets.only(right: 12.0),
-                child: Icon(
-                  Icons.lock_outline,
-                  color: Colors.grey.shade400,
-                ),
-              ),
+              suffixIcon: Icons.lock_outline,
               label: '21'.tr,
               hintText: '36'.tr,
             ),
@@ -84,18 +77,13 @@ class ResetPaswwordPage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
-            child: Filds(
+            child: MyField(
+              isNumber: false,
               validator: (val) {
                 return null;
               },
               controller: controller.repeatNewPassword,
-              suffixIcon: Padding(
-                padding: const EdgeInsets.only(right: 12.0),
-                child: Icon(
-                  Icons.lock_outline,
-                  color: Colors.grey.shade400,
-                ),
-              ),
+              suffixIcon: Icons.lock_outline,
               label: '21'.tr,
               hintText: '44'.tr,
             ),
@@ -104,9 +92,7 @@ class ResetPaswwordPage extends StatelessWidget {
             height: 30,
           ),
           AuthButton(
-            onPressed: () {
-              Get.to(() => const SuccessSignUp());
-            },
+            onPressed: () {},
             text: '35'.tr,
             height: 50,
             width: 150,
@@ -119,7 +105,8 @@ class ResetPaswwordPage extends StatelessWidget {
             textone: 'back'.tr,
             texttwo: '11'.tr,
             onTap: () {
-              Get.to(() => const LoginPage());
+              controller.goToLogin();
+              Get.delete<AppController>();
             },
           )
         ],

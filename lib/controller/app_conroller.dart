@@ -1,12 +1,15 @@
+import 'package:e_encommerce/core/constant/colors.dart';
 import 'package:e_encommerce/core/constant/route_names.dart';
 import 'package:e_encommerce/data/datasource/static/static.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 abstract class MyController extends GetxController {
   checkCode();
   late String verifyCode;
-
+  goToLogin();
+  goTosuccessResetPaswword();
   nextPage();
   onPageChanged(int index);
   late PageController pageController;
@@ -16,10 +19,18 @@ abstract class MyController extends GetxController {
   checkEmail();
   login();
   signUp();
+
+  exitDialog();
+
+  showPassword();
 }
 
 class AppController extends MyController {
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+  bool isShowPassword = true;
+
+  GlobalKey<FormState> signinFormstate = GlobalKey<FormState>();
+  GlobalKey<FormState> signUpFormstate = GlobalKey<FormState>();
+  GlobalKey<FormState> forgotPasswordFormstate = GlobalKey<FormState>();
   // New Password
   late TextEditingController newPassword;
   late TextEditingController repeatNewPassword;
@@ -39,7 +50,7 @@ class AppController extends MyController {
   @override
   login() {
     // var formdata = formstate.currentState;
-    if (formstate.currentState!.validate()) {
+    if (signinFormstate.currentState!.validate()) {
       print('Validate');
     } else {
       print('not Valid');
@@ -47,7 +58,24 @@ class AppController extends MyController {
   }
 
   @override
-  signUp() {}
+  signUp() {
+    if (signUpFormstate.currentState!.validate()) {
+      Get.offNamed(AppRouteNames.verifySignUp);
+      print('Validate');
+    } else {
+      print('not Valid');
+    }
+  }
+
+  @override
+  checkEmail() {
+    if (forgotPasswordFormstate.currentState!.validate()) {
+      Get.offNamed(AppRouteNames.verificationCode);
+      print('Validate');
+    } else {
+      print('not Valid');
+    }
+  }
 
   @override
   void onInit() {
@@ -88,13 +116,10 @@ class AppController extends MyController {
   }
 
   @override
-  checkEmail() {}
-
-  @override
   nextPage() {
     currentPage++;
     if (currentPage > onBoardingModelist.length - 1) {
-      Get.offAllNamed(AppRouteNames.login);
+      Get.offNamed(AppRouteNames.login);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 300), curve: Curves.ease);
@@ -106,7 +131,7 @@ class AppController extends MyController {
     currentPage = 4;
 
     if (currentPage > onBoardingModelist.length - 1) {
-      Get.offAllNamed(AppRouteNames.login);
+      Get.offNamed(AppRouteNames.login);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 300), curve: Curves.ease);
@@ -121,7 +146,46 @@ class AppController extends MyController {
   }
 
   @override
-  checkCode() {}
+  checkCode() {
+    Get.offNamed(AppRouteNames.login);
+  }
+
+  @override
+  goToLogin() {
+    Get.offNamed(AppRouteNames.login);
+  }
+
+  @override
+  goTosuccessResetPaswword() {
+    Get.offNamed(AppRouteNames.successResetPaswword);
+  }
+
+  @override
+  Future<bool> exitDialog() {
+    Get.defaultDialog(
+      buttonColor: signinButtonColor,
+      // contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+      textConfirm: 'Exit',
+      confirmTextColor: whiteColor,
+      onConfirm: () {
+        SystemNavigator.pop();
+      },
+
+      onCancel: () {},
+      title: "",
+      middleText: "Are you sure you want to go out?",
+      backgroundColor: whiteColor,
+      titleStyle: const TextStyle(color: titleColor),
+      middleTextStyle: const TextStyle(color: titleColor),
+    );
+    return Future.value(true);
+  }
+
+  @override
+  showPassword() {
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
+  }
 
   // @override
   // goToSuccessResetPassword() {

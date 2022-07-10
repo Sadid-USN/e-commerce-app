@@ -1,4 +1,5 @@
 import 'package:e_encommerce/core/constant/routes.dart';
+import 'package:e_encommerce/mybinding.dart';
 import 'package:e_encommerce/view/screen/language_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       title: 'E-commerce',
       theme: localController.appTheme,
       routes: routes,
+      initialBinding: MyBinding(),
       home:
           //const Test(),
 

@@ -8,4 +8,5 @@ class AppRouteNames {
   static const String successSignUp = '/successSignUp';
   static const String successResetPaswword = '/successResetPaswword';
   static const String checkEmail = '/checkEmail';
+  static const String verifySignUp = '/verifySignUp';
 }
